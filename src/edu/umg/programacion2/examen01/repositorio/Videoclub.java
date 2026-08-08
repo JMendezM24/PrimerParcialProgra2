@@ -122,8 +122,15 @@ public class Videoclub {
 	 * - Si no hay coincidencias, retorna una lista vacía (no null).
 	 */
 	public List<Pelicula> buscarPorTituloParcial(String texto) {
-		// TODO: reemplazar esta línea por la lógica descrita arriba.
-		throw new UnsupportedOperationException("TODO: completar buscarPorTituloParcial() en Videoclub");
+	    List<Pelicula> resultados = new ArrayList<>();
+
+	    for (Pelicula pelicula : peliculas) {
+	        if (pelicula.getTitulo().toLowerCase().contains(texto.toLowerCase())) {
+	            resultados.add(pelicula);
+	        }
+	    }
+
+	    return resultados;
 	}
 
 	/**
